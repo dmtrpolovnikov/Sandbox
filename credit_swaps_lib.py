@@ -178,17 +178,14 @@ def construct_credit_swap(
     
     if render:
         
-        fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+        plt.figure(figsize=(15,6))
         
-        axes[0].plot(credit_swaps['Discount factor RUB'], label='RUB effective discount factor curve')
-        axes[0].plot(credit_swaps['Discount factor USD'], label='USD effective discount factor curve')
+        plot(credit_swaps['Year IR RUB'], label='RUB year interest rate')
+        plot(credit_swaps['Year IR USD'], label='USD year interest rate')
+        plot(credit_swaps['LIBOR']*100, label='USD LIBOR')
         
-        axes[1].plot(credit_swaps['Year IR RUB'], label='RUB year interest rate')
-        axes[1].plot(credit_swaps['Year IR USD'], label='USD year interest rate')
-        axes[1].plot(credit_swaps['LIBOR']*100, label='USD LIBOR')
-        
-        axes[0].legend(), axes[1].legend()
-        axes[0].grid(), axes[1].grid()
+        plt.legend()
+        plt.grid()
         
         plt.show()
 
