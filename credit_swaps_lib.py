@@ -180,9 +180,9 @@ def construct_credit_swap(
         
         plt.figure(figsize=(15,6))
         
-        plot(credit_swaps['Year IR RUB'], label='RUB year interest rate')
-        plot(credit_swaps['Year IR USD'], label='USD year interest rate')
-        plot(credit_swaps['LIBOR']*100, label='USD LIBOR')
+        plt.plot(credit_swaps['Year IR RUB'], label='RUB year interest rate')
+        plt.plot(credit_swaps['Year IR USD'], label='USD year interest rate')
+        plt.plot(credit_swaps['LIBOR']*100, label='USD LIBOR')
         
         plt.legend()
         plt.grid()
